@@ -48,13 +48,21 @@
       display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.01em;
     }
     .brand-mark{
-      width:38px; height:38px; border-radius:11px;
+      width:42px; height:42px; border-radius:10px;
       display:grid; place-items:center;
-      background:linear-gradient(135deg, var(--blue), #27496b);
-      box-shadow:var(--shadow);
       flex:0 0 auto;
+      overflow:hidden;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:0 3px 8px rgba(27,40,66,.05);
     }
-    .brand-mark svg{width:21px; height:21px}
+    .brand-logo img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+      padding:4px;
+    }
     nav{
       display:flex; gap:18px; flex-wrap:wrap; font-size:.96rem;
     }
@@ -215,13 +223,10 @@
     <div class="wrap">
       <div class="topbar">
         <div class="brand">
-          <div class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 64 64" fill="none">
-              <path d="M10 32C16 32 20 20 26 20C32 20 36 44 42 44C48 44 52 32 58 32" stroke="white" stroke-width="4.5" stroke-linecap="round"/>
-              <circle cx="34" cy="32" r="3.4" fill="#F4D35E"/>
-            </svg>
+          <div class="brand-mark brand-logo" aria-hidden="true">
+            <img src="assets/LISA_mission_logo.png" alt="" />
           </div>
-          <span>CUWav F2F 2026</span>
+          <span>CUWav F2F · 23–25 March 2026</span>
         </div>
         <nav aria-label="Primary">
           <a href="index.html#about">About</a>
@@ -238,15 +243,10 @@
           <h1>CUWav F2F Mallorca Meeting</h1>
           <p class="subtitle">
             A focused collaboration meeting in Palma, bringing together members of the waveforms coordination
-            unit and colleagues from neighbouring activities to advance the DDPC programme in an intensive,
-            in-person setting.
+            unit and colleagues from related activities to advance the DDPC programme through direct scientific
+            exchange, technical discussion, and planning.
           </p>
-          <div class="mission-strip">
-            <img src="assets/LISA_mission_logo.png" alt="LISA mission logo" />
-            <span class="muted-note">Waveform and data-processing activities within the LISA programme</span>
-          </div>
-
-          <div class="hero-meta">
+<div class="hero-meta">
             <div class="item">
               <span class="label">Dates</span>
               <span class="value">23–25 March 2026</span>
@@ -305,11 +305,15 @@
     <section id="about">
       <h2>Workshop overview</h2>
       <p class="lede">
-        The CUWav face-to-face meeting is intended first and foremost as a working meeting for the members of
-        the waveforms coordination unit, while also bringing in colleagues from other units whose activities
-        intersect with waveform modelling, simulation, validation, pipeline development, and data-analysis
-        interfaces. The immediate aim is to make concrete scientific and technical progress, but also to
-        strengthen the shared direction of the DDPC programme through direct discussion, planning, and cross-unit exchange.
+        The CUWav face-to-face meeting is a working meeting for the members of the waveforms coordination unit,
+        together with colleagues from other units whose activities intersect with waveform modelling, simulation,
+        validation, pipeline development, and analysis interfaces. The aim is to make concrete scientific and
+        technical progress while strengthening the shared direction of the DDPC programme.
+      </p>
+      <p class="lede">
+        This public page is designed both as a practical information point for participants and as a concise
+        outward-facing description of the meeting. It highlights the scientific context, the workshop goals,
+        the preliminary programme, and the local venue arrangements in Palma.
       </p>
       <div class="split">
         <div>
@@ -340,10 +344,10 @@
         from massive black-hole mergers, compact galactic binaries, and a range of other astrophysical and cosmological sources.
       </p>
       <p class="lede">
-        Spain is one of the key countries contributing hardware to ESA for LISA. Beyond hardware, scientific participation
-        is organised across several complementary structures, including the DDPC, the LISA Consortium, and the LISA Science Team.
-        Within that landscape, the DDPC is responsible for the development and operation of the European science data-processing
-        pipelines, while the LISA Consortium provides a large international framework for preparing the scientific exploitation
+        Spain is one of the key countries contributing hardware to ESA for LISA. Scientific participation is organised
+        across several complementary structures, including the DDPC, the LISA Consortium, and the LISA Science Team.
+        The DDPC is responsible for the development and operation of the European science data-processing pipelines,
+        while the LISA Consortium provides the broader international framework for preparing the scientific exploitation
         of the mission.
       </p>
       <div class="grid-3">
@@ -393,6 +397,10 @@
     
     <section id="programme">
       <h2>Programme</h2>
+      <p class="lede">
+        Preliminary schedule for the meeting, adapted from the latest internal agenda and reproduced here without
+        dropping content from the programme table.
+      </p>
       <div class="agenda-wrap">
         <table class="programme">
           <thead>
@@ -403,7 +411,7 @@
               <th>Wednesday 25 March</th>
             </tr>
           </thead>
-                    <tbody>
+          <tbody>
             <tr>
               <td class="time">09:00</td>
               <td><strong>Welcome coffee</strong></td>
@@ -488,10 +496,15 @@
                 Update from Balrog (Riccardo Buscicchio) 20' + 10'<br>
                 PhenTAX (Alessandro Santini) 20' + 10'
               </td>
-              <td>
-                We have some desk space for people who still want to stick around for the afternoon for discussions etc.<br><br>
-                People who want to visit for extra days, please contact the local organisers (see above).
-              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="time">15:00</td>
+              <td colspan="3">We have some desk space for people who still want to stick around for the afternoon for discussions etc.</td>
+            </tr>
+            <tr>
+              <td class="time">15:30</td>
+              <td colspan="3">People who want to visit for extra days, please contact the local organisers (see above).</td>
             </tr>
             <tr>
               <td class="time">16:00</td>
@@ -549,7 +562,6 @@
 
   <footer>
     CUWav F2F Mallorca Meeting · 23–25 March 2026 · Palma, Spain
-    <div style="max-width:1120px;margin:0 auto 18px;padding:0 24px;color:#617087;font-size:.88rem;">Replace <code>https://s2e2.cosmos.esa.int/confluence/spaces/LISADDPC/pages/1769996678/CUWav+F2F+Mallorca+meeting</code> with the real internal Confluence page URL.</div>
 </footer>
 </body>
 </html>
