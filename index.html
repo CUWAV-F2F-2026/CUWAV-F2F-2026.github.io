@@ -2,585 +2,463 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CUWav F2F Mallorca Meeting 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CUWav F2F Mallorca Meeting</title>
   <meta name="description" content="CUWav F2F Mallorca Meeting, 23–25 March 2026, Palma, Spain." />
   <style>
-    :root{
-      --bg:#f7f5ef;
-      --paper:#ffffff;
-      --paper-2:#fcfbf8;
-      --ink:#1c2940;
-      --muted:#617087;
-      --line:#dce3ea;
-      --blue:#305d88;
-      --blue-2:#496f95;
-      --gold:#c59b32;
-      --gold-soft:#f6edd7;
-      --soft:#eef3f8;
-      --shadow:0 14px 36px rgba(30,42,68,.08);
-      --radius:18px;
-      --max:1120px;
+    :root {
+      --bg: #0b1020;
+      --panel: rgba(255,255,255,0.08);
+      --panel-strong: rgba(255,255,255,0.12);
+      --text: #eef2ff;
+      --muted: #c9d2ff;
+      --line: rgba(255,255,255,0.14);
+      --accent: #7dd3fc;
+      --accent-2: #c4b5fd;
+      --good: #c7f9cc;
+      --shadow: 0 20px 60px rgba(0,0,0,0.25);
+      --radius: 18px;
+      --max: 1120px;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color:var(--ink);
+      color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(197,155,50,.05), transparent 20%),
-        linear-gradient(180deg, #fbfaf7 0%, var(--bg) 100%);
-      line-height:1.62;
+        radial-gradient(circle at top right, rgba(125, 211, 252, 0.18), transparent 28%),
+        radial-gradient(circle at top left, rgba(196, 181, 253, 0.15), transparent 24%),
+        linear-gradient(180deg, #0b1020 0%, #111936 55%, #0d1326 100%);
+      line-height: 1.55;
     }
-    a{color:var(--blue); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
-    header.site{
-      background:linear-gradient(180deg, rgba(251,250,247,.98), rgba(248,246,240,.98));
-      border-bottom:1px solid var(--line);
+
+    a { color: var(--text); }
+    .wrap { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
+
+    header.hero {
+      position: relative;
+      overflow: hidden;
+      padding: 3.2rem 0 2rem;
+      border-bottom: 1px solid var(--line);
     }
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:18px; padding:18px 0;
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: center;
     }
-    .brand{
-      display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.01em;
+
+    .eyebrow {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 1rem;
     }
-    .brand-mark{
-      width:63px; height:63px; border-radius:10px;
-      display:grid; place-items:center;
-      flex:0 0 auto;
-      overflow:hidden;
-      background:#fff;
-      border:1px solid var(--line);
-      box-shadow:0 3px 8px rgba(27,40,66,.05);
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: 1.02;
+      margin: 0 0 1rem;
+      letter-spacing: -0.04em;
     }
-    .brand-logo img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      display:block;
-      padding:4px;
+
+    .lead {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 62ch;
+      margin-bottom: 1.4rem;
     }
-    nav{
-      display:flex; gap:18px; flex-wrap:wrap; font-size:.96rem;
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.25rem;
     }
-    nav a{color:var(--muted)}
-    .hero{
-      display:grid; grid-template-columns:1.12fr .88fr;
-      gap:34px; align-items:center;
-      padding:40px 0 42px;
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      font-weight: 600;
     }
-    .eyebrow{
-      display:inline-block;
-      padding:6px 12px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:var(--paper);
-      color:var(--blue);
-      font-size:.88rem;
-      margin-bottom:14px;
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #0b1020;
+      border: none;
     }
-    h1{
-      margin:0 0 14px;
-      font-family:"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
-      font-size:clamp(2.35rem,4.2vw,4.2rem);
-      line-height:1.03;
-      letter-spacing:-.02em;
-      font-weight:700;
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
     }
-    .subtitle{
-      margin:0 0 22px;
-      color:var(--muted);
-      font-size:1.08rem;
-      max-width:60ch;
+
+    .hero-card {
+      padding: 1.2rem;
     }
-    .hero-meta{
-      display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:12px; margin-top:18px;
+
+    .wave-art {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      border: 1px solid var(--line);
     }
-    .hero-meta .item{
-      background:rgba(255,255,255,.86);
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:14px 15px;
+
+    main { padding: 2rem 0 4rem; }
+    section { margin-top: 1.5rem; }
+    .section-title { font-size: 1.6rem; margin: 0 0 1rem; letter-spacing: -0.02em; }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
-    .hero-meta .label{
-      display:block;
-      margin-bottom:5px;
-      color:var(--muted);
-      font-size:.76rem;
-      text-transform:uppercase;
-      letter-spacing:.08em;
+
+    .fact {
+      padding: 1rem;
     }
-    .hero-meta .value{font-weight:600}
-    .hero-art{
-      background:var(--paper);
-      border:1px solid var(--line);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-      padding:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+
+    .fact .label {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 0.35rem;
     }
-    .hero-art svg{
-      display:block;
-      width:100%;
-      height:auto;
+
+    .fact .value {
+      font-weight: 700;
+      font-size: 1.02rem;
     }
-    main{padding:34px 0 56px}
-    section{
-      background:var(--paper);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:28px;
-      margin:0 0 26px;
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
     }
-    h2{
-      margin:0 0 10px;
-      font-family:"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
-      font-size:1.82rem;
-      line-height:1.14;
-      letter-spacing:-.01em;
+
+    .panel { padding: 1.2rem; }
+    .panel p:last-child { margin-bottom: 0; }
+
+    .agenda-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.05);
+      box-shadow: var(--shadow);
     }
-    h3{
-      margin:0 0 10px;
-      font-size:1.04rem;
-      color:var(--ink);
+
+    table {
+      width: 100%;
+      min-width: 820px;
+      border-collapse: collapse;
     }
-    .lede{
-      margin:0 0 18px;
-      color:var(--muted);
-      max-width:74ch;
+
+    th, td {
+      padding: 0.9rem 0.9rem;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
     }
-    .split{display:grid; grid-template-columns:1fr 1fr; gap:22px}
-    .callout{
-      background:var(--paper-2);
-      border-left:4px solid var(--gold);
-      border-radius:12px;
-      padding:16px 18px;
-      color:#5f4a18;
+
+    thead th {
+      position: sticky;
+      top: 0;
+      background: rgba(8, 12, 28, 0.95);
+      text-align: left;
+      font-size: 0.95rem;
     }
-    .btnrow{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
-    .btn{
-      display:inline-block; padding:10px 14px; border-radius:12px;
-      border:1px solid var(--line); background:var(--paper);
-      color:var(--blue); font-weight:600;
-      box-shadow:0 4px 10px rgba(27,40,66,.04);
+
+    tbody tr:hover td { background: rgba(255,255,255,0.035); }
+    .time { white-space: nowrap; color: var(--muted); width: 110px; }
+    .tag {
+      display: inline-block;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(199, 249, 204, 0.14);
+      color: var(--good);
+      font-size: 0.82rem;
+      margin-bottom: 0.45rem;
+      border: 1px solid rgba(199, 249, 204, 0.18);
     }
-    .btn.primary{
-      background:var(--blue); border-color:var(--blue); color:#fff;
+
+    ul.clean {
+      margin: 0.35rem 0 0;
+      padding-left: 1.1rem;
     }
-    .grid-3{
-      display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px;
+
+    footer {
+      padding: 2rem 0 3.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
     }
-    .mini{
-      background:#fbfcfe; border:1px solid var(--line); border-radius:14px; padding:16px;
+
+    .notice {
+      padding: 0.9rem 1rem;
+      border-left: 3px solid var(--accent);
+      background: rgba(125, 211, 252, 0.08);
+      border-radius: 12px;
+      color: var(--muted);
     }
-    .agenda-wrap{overflow-x:auto}
-    table.programme{
-      width:100%; min-width:900px; border-collapse:separate; border-spacing:0;
-      border:1px solid var(--line); border-radius:16px; overflow:hidden; background:#fff;
-    }
-    .programme thead th{
-      background:linear-gradient(180deg, #f4f7fb 0%, #edf1f6 100%);
-      padding:16px 14px; text-align:left; border-bottom:1px solid var(--line);
-      vertical-align:bottom; font-size:.96rem;
-    }
-    .programme tbody td{
-      padding:13px 14px; border-bottom:1px solid #edf0f4; border-right:1px solid #edf0f4;
-      vertical-align:top; font-size:.95rem;
-    }
-    .programme tbody tr:last-child td{border-bottom:none}
-    .programme tbody td:last-child, .programme thead th:last-child{border-right:none}
-    .time{
-      width:122px; white-space:nowrap; background:#fbfcfd; color:var(--blue); font-weight:700;
-    }
-    .programme em{color:var(--muted)}
-    ul.clean{margin:10px 0 0 18px; padding:0}
-    ul.clean li{margin:10px 0}
-    .sponsors{
-      display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; align-items:stretch;
-    }
-    .sponsor{
-      border:1px solid var(--line); border-radius:16px; background:#fff; padding:18px;
-      display:flex; flex-direction:column; justify-content:center; min-height:146px;
-    }
-    .sponsor img{max-width:100%; max-height:72px; object-fit:contain}
-    .sponsor .caption{
-      margin-top:10px; color:var(--muted); font-size:.92rem;
-    }
-    footer{
-      text-align:center; color:var(--muted); font-size:.94rem; padding:0 0 44px;
-    }
-    .small{color:var(--muted); font-size:.93rem}
-    @media (max-width:960px){
-      .hero,.split,.grid-3,.sponsors{grid-template-columns:1fr}
-      .hero-meta{grid-template-columns:1fr}
-      .topbar{flex-direction:column; align-items:flex-start}
-      .wrap{padding:0 16px}
-      section{padding:22px}
+
+    @media (max-width: 900px) {
+      .hero-grid, .split, .facts { grid-template-columns: 1fr; }
+      header.hero { padding-top: 2.2rem; }
     }
   </style>
 </head>
 <body>
-  <header class="site">
-    <div class="wrap">
-      <div class="topbar">
-        <div class="brand">
-          <div class="brand-mark brand-logo" aria-hidden="true">
-            <img src="assets/LISA_mission_logo.png" alt="" />
-          </div>
-          <span>CUWav F2F · 23–25 March 2026 · Palma, Mallorca</span>
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">23–25 March 2026 · Palma, Spain · Hybrid meeting</div>
+        <h1>CUWav F2F Mallorca Meeting</h1>
+        <p class="lead">
+          A focused three-day face-to-face meeting for discussion, coordination, tutorials, and planning across CU-Wav and related activities.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#agenda">View agenda</a>
+          <a class="btn" href="#practical">Practical information</a>
         </div>
-        <nav aria-label="Primary">
-          <a href="index.html#about">About</a>
-          <a href="index.html#lisa">LISA</a>
-          <a href="index.html#programme">Programme</a>
-          <a href="venue.html">Venue</a>
-          <a href="index.html#support">Support</a>
-        </nav>
       </div>
+      <div class="card hero-card">
+        <svg class="wave-art" viewBox="0 0 720 420" role="img" aria-label="Stylized gravitational wave inspired graphic">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#7dd3fc" />
+              <stop offset="100%" stop-color="#c4b5fd" />
+            </linearGradient>
+            <linearGradient id="g2" x1="0" x2="1" y1="1" y2="0">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08" />
+              <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02" />
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="720" height="420" fill="url(#g2)"/>
+          <g opacity="0.25">
+            <circle cx="560" cy="110" r="84" fill="#7dd3fc"/>
+            <circle cx="600" cy="150" r="84" fill="#c4b5fd"/>
+          </g>
+          <g fill="none" stroke="url(#g1)" stroke-width="4" stroke-linecap="round">
+            <path d="M-10 220 C 60 220, 70 110, 140 110 C 210 110, 220 310, 290 310 C 360 310, 370 150, 440 150 C 510 150, 520 260, 590 260 C 660 260, 670 200, 740 200"/>
+            <path d="M-10 250 C 70 250, 70 150, 140 150 C 210 150, 220 280, 290 280 C 360 280, 370 180, 440 180 C 510 180, 530 230, 600 230 C 670 230, 680 190, 740 190" opacity="0.85"/>
+            <path d="M-10 185 C 70 185, 70 85, 140 85 C 210 85, 225 335, 290 335 C 355 335, 370 125, 440 125 C 510 125, 520 285, 590 285 C 660 285, 670 215, 740 215" opacity="0.55"/>
+          </g>
+          <g fill="#eef2ff" opacity="0.9">
+            <circle cx="140" cy="110" r="6"/>
+            <circle cx="290" cy="310" r="6"/>
+            <circle cx="440" cy="150" r="6"/>
+            <circle cx="590" cy="260" r="6"/>
+          </g>
+          <text x="38" y="60" fill="#eef2ff" font-size="24" font-family="Inter, sans-serif">Mallorca · March 2026</text>
+        </svg>
+      </div>
+    </div>
 
-      <div class="hero">
-        <div>
-
-          <h1>CUWav F2F Mallorca Meeting</h1>
-          <p class="subtitle">
-            A focused collaboration meeting in Palma, bringing together members of the waveforms coordination
-            unit and colleagues from related activities to advance the DDPC programme through direct scientific
-            exchange, technical discussion, and planning.
-          </p>
-<div class="hero-meta">
-            <div class="item">
-              <span class="label">Dates</span>
-              <span class="value">23–25 March 2026</span>
-            </div>
-            <div class="item">
-              <span class="label">Format</span>
-              <span class="value">In person and remote</span>
-            </div>
-            <div class="item">
-              <span class="label">Venue</span>
-              <span class="value"><a href="https://iac3.uib.es/about-us/"  target="_blank" rel="noopener noreferrer">IAC3, Parc Bit, Palma, Spain</a></span>
-            </div>
-            <div class="item">
-              <span class="label">Zoom, minutes, participant list</span>
-              <span class="value"><a href="https://s2e2.cosmos.esa.int/confluence/spaces/LISADDPC/pages/1769996678/CUWav+F2F+Mallorca+meeting" target="_blank" rel="noopener noreferrer">link to the Confluence page</a></span>
-            </div>
-          </div>
-          <div class="btnrow">
-            <a class="btn primary" href="venue.html">Venue & travel</a>
-            <a class="btn" href="https://www.google.com/maps/place/IAC3+Institute+of+Applied+Computing+%26+Community+Code/@39.6355897,2.6328775,100m/data=!3m1!1e3!4m15!1m8!3m7!1s0x1297ed44253cb95b:0x36a0cf8f83b41ab9!2sParc+Bit,+Nord,+07120,+Illes+Balears!3b1!8m2!3d39.6362831!4d2.6325747!16s%2Fm%2F0ynxhhd!3m5!1s0x1297ed006af431cd:0x4804fa9ddc0a0f0f!8m2!3d39.635529!4d2.6332846!16s%2Fg%2F11w1wk4vnp?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Open venue in Google Maps</a> 
-          </div>
-        </div>
-
-        <div class="hero-art" aria-hidden="true">
-<svg viewBox="0 0 620 360" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
-
-  <defs>
-    <linearGradient id="bg" x1="0" x2="1">
-      <stop offset="0%" stop-color="#f8f6ef"/>
-      <stop offset="100%" stop-color="#edf2f7"/>
-    </linearGradient>
-
-    <linearGradient id="wave" x1="0" x2="1">
-      <stop offset="0%" stop-color="#355f89"/>
-      <stop offset="100%" stop-color="#c59b32"/>
-    </linearGradient>
-  </defs>
-
-  <!-- background -->
-  <rect x="0" y="0" width="620" height="360" rx="20" fill="url(#bg)"/>
-
-  <!-- sun / orbit hint -->
-  <circle cx="492" cy="80" r="42" fill="#f3ead2"/>
-
-  <!-- LISA triangle -->
-  <g transform="rotate(-12 310 190)">
-
-    <polygon
-      points="310,82 448,321 172,321"
-      fill="none"
-      stroke="#cfd8e4"
-      stroke-width="7"
-    />
-
-    <circle cx="310" cy="82" r="10" fill="#355f89"/>
-    <circle cx="448" cy="321" r="10" fill="#355f89"/>
-    <circle cx="172" cy="321" r="10" fill="#355f89"/>
-
-  </g>
-
-  <!-- waveform shadow -->
-  <path
-    d="M55 230
-       C118 230 129 145 182 145
-       C235 145 248 283 307 283
-       C366 283 381 170 448 170
-       C507 170 529 230 566 230"
-    fill="none"
-    stroke="#d7e0ea"
-    stroke-width="18"
-    stroke-linecap="round"
-  />
-
-  <!-- waveform -->
-  <path
-    d="M55 230
-       C118 230 129 145 182 145
-       C235 145 248 283 307 283
-       C366 283 381 170 448 170
-       C507 170 529 230 566 230"
-    fill="none"
-    stroke="url(#wave)"
-    stroke-width="4.5"
-    stroke-linecap="round"
-  />
-
-  <!-- title -->
-  <text
-    x="50"
-    y="64"
-    fill="#28496a"
-    font-size="24"
-    font-family="Georgia, serif"
-  >
-    LISA · Palma 2026
-  </text>
-
-</svg>
-        </div>
+    <div class="wrap facts">
+      <div class="card fact">
+        <div class="label">Dates</div>
+        <div class="value">23–25 March 2026</div>
+      </div>
+      <div class="card fact">
+        <div class="label">Format</div>
+        <div class="value">In person and remote</div>
+      </div>
+      <div class="card fact">
+        <div class="label">Venue</div>
+        <div class="value">IAC3, Parc Bit, Palma</div>
+      </div>
+      <div class="card fact">
+        <div class="label">Online access</div>
+        <div class="value">Zoom links TBA</div>
       </div>
     </div>
   </header>
 
-  <main class="wrap">
-    <section id="about">
-      <div class="split">
-        <div>
-          <h3>Local organisers</h3>
-<p class="small">
-Antoni Ramos Buades, Cecilio Garcia Quiros, Jorge Valencia Gomez, Joan Llobera, Maria Rosselló, and Sascha Husa.
-</p>
+  <main>
+    <div class="wrap">
+      <section class="split" id="practical">
+        <div class="card panel">
+          <h2 class="section-title">Meeting information</h2>
+          <p><strong>Location:</strong> Institute of Applied Computing with Community Code (IAC3), Parc Bit, Carrer Blaise Pascal 6, 07121 Palma, Spain.</p>
+          <p><strong>Getting there:</strong> From Plaza España, take metro line M1 to ParcBit (last stop) and walk about 6 minutes, or take bus line 19 toward Parc Bit.</p>
+          <p><strong>Questions:</strong> Please contact the local organizers: Antoni Ramos Buades, Cecilio Garcia Quiros, Jorge Valencia Gomez, and Sascha Husa.</p>
         </div>
-      </div>
-    </section>
+        <div class="card panel">
+          <h2 class="section-title">Public page notes</h2>
+          <p>This version is intended for public web use. Internal registration details and personal contact information have been removed.</p>
+          <div class="notice">A second page can be added later for venue access, local transport, accommodation, and arrival instructions.</div>
+        </div>
+      </section>
 
-    <section id="lisa">
-      <h2>What is LISA?</h2>
-      <p class="lede">
-        <strong>LISA</strong>, the <strong>Laser Interferometer Space Antenna</strong>, is a space-based gravitational-wave
-        observatory led by ESA and planned for launch in the mid-2030s. Using three spacecraft in heliocentric orbit,
-        arranged as a 2.5-million-kilometre triangular interferometer, LISA will observe low-frequency gravitational waves
-        from massive black-hole mergers, compact galactic binaries, and a range of other astrophysical and cosmological sources.
-      </p>
-        The Distributed Data Processing Center (DDPC) is responsible for the development and operation of the European science data-processing pipelines,
-        while the LISA Consortium provides the broader international framework for preparing the scientific exploitation
-        of the mission.
-      </p>
-      <div class="grid-3">
-        <div class="mini">
-          <h3>Mission concept</h3>
-          <p>The observatory consists of three spacecraft separated by millions of kilometres, linked by precision laser interferometry to measure tiny spacetime distortions.</p>
+      <section id="agenda">
+        <h2 class="section-title">Agenda</h2>
+        <div class="agenda-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="time">CET</th>
+                <th>Monday 23</th>
+                <th>Tuesday 24</th>
+                <th>Wednesday 25</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="time">09:00</td>
+                <td><span class="tag">Start</span><div>Welcome coffee</div></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="time">09:30–10:30</td>
+                <td>
+                  <strong>CU-Wav unit updates</strong>
+                  <ul class="clean">
+                    <li>EMRIs</li>
+                    <li>SOBH</li>
+                    <li>MBHB</li>
+                    <li>Cosmo</li>
+                    <li>Burst</li>
+                  </ul>
+                </td>
+                <td>
+                  <strong>CU-SIM</strong>
+                  <ul class="clean">
+                    <li>Post-mortem Mojito</li>
+                    <li>JAX LISA response</li>
+                    <li>Plans for 2026</li>
+                    <li>Tutorial on Mojito package / build bricks? TBC</li>
+                  </ul>
+                </td>
+                <td>
+                  <strong>SysTeam / PAQA</strong>
+                  <ul class="clean">
+                    <li>Tutorial on SonarCube</li>
+                    <li>Update from CU-L01 PA/QA</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td class="time">11:00–11:30</td>
+                <td><span class="tag">Break</span>Coffee break</td>
+                <td><span class="tag">Break</span>Coffee break</td>
+                <td><span class="tag">Break</span>Coffee break</td>
+              </tr>
+              <tr>
+                <td class="time">11:30–12:30</td>
+                <td>
+                  <strong>Consortium updates</strong>
+                  <ul class="clean">
+                    <li>WFWF overview</li>
+                    <li>Common tools</li>
+                    <li>Memory project</li>
+                    <li>Consortium–DDPC relation</li>
+                  </ul>
+                </td>
+                <td>
+                  <strong>CU-L2D</strong>
+                  <ul class="clean">
+                    <li>Recap, waveform usage and interfaces</li>
+                    <li>Mojito lite validation</li>
+                    <li>Mojito Heavy plan</li>
+                    <li>Plans for 2026</li>
+                  </ul>
+                </td>
+                <td>
+                  <strong>CU-Wav</strong>
+                  <ul class="clean">
+                    <li>Parameter space coverage for MBHBs in Mojito Heavy</li>
+                    <li>MBHB mismatches project + LISA research</li>
+                    <li>Review pipeline development session</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td class="time">13:00–14:30</td>
+                <td><span class="tag">Break</span>Lunch break</td>
+                <td><span class="tag">Break</span>Lunch break</td>
+                <td><span class="tag">Session</span>CU-Wav call</td>
+              </tr>
+              <tr>
+                <td class="time">14:30–15:30</td>
+                <td>
+                  <strong>Waveform generators</strong>
+                  <ul class="clean">
+                    <li>pyseobnr</li>
+                    <li>phenomxpy</li>
+                    <li>FEW</li>
+                  </ul>
+                </td>
+                <td>
+                  <strong>CU-L2D</strong>
+                  <ul class="clean">
+                    <li>Tutorial of “public” global-fit pipeline</li>
+                    <li>Update from Balrog</li>
+                    <li>Discussion on waveform accuracy figures of merit</li>
+                  </ul>
+                </td>
+                <td>
+                  <strong>Afternoon notes</strong>
+                  <ul class="clean">
+                    <li>End of formal agenda at 14:00</li>
+                    <li>Desk space available for discussions</li>
+                    <li>Visitors staying extra days should contact local organizers</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td class="time">16:00</td>
+                <td><span class="tag">Break</span>Coffee break</td>
+                <td><span class="tag">Break</span>Coffee break</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="time">16:30–17:30</td>
+                <td>
+                  <strong>Waveform generators</strong>
+                  <ul class="clean">
+                    <li>pyEFPE</li>
+                    <li>Burst WF generator</li>
+                    <li>gwsignal</li>
+                  </ul>
+                </td>
+                <td>
+                  <strong>CU-L2D</strong>
+                  <ul class="clean">
+                    <li>PhenTAX</li>
+                    <li>Simulation based inference</li>
+                  </ul>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="mini">
-          <h3>Scientific targets</h3>
-          <p>LISA will probe massive black-hole mergers, galactic compact binaries, and other sources inaccessible to ground-based detectors.</p>
-        </div>
-        <div class="mini">
-          <h3>Topics of this Meeting</h3>
-          <p>The work discussed at this meeting feeds into waveform modelling, interfaces, validation, and pipeline development relevant to DDPC preparations.</p>
-        </div>
-      </div>
-      <div class="btnrow">
-        <a class="btn" href="https://www.lisamission.org/" target="_blank" rel="noopener noreferrer">LISA mission</a>
-        <a class="btn" href="https://www.cosmos.esa.int/web/lisa" target="_blank" rel="noopener noreferrer">ESA LISA page</a>
-        <a class="btn" href="https://lisamission.org/lisa-consortium" target="_blank" rel="noopener noreferrer">LISA Consortium</a>
-      </div>
-    </section>
-
-    <section id="goals">
-      <h2>Goals of the workshop</h2>
-      <p class="lede">
-        The workshop is designed to accelerate technical and scientific progress through a concentrated in-person format.
-        In particular, it aims to bring together CU-WAV members, along with participants from other related units, to
-        compare status, identify common needs, align interfaces, and advance the DDPC programme in a coordinated way.
-      </p>
-      <div class="grid-3">
-        <div class="mini">
-          <h3>Exchange progress</h3>
-          <p>Share updates across waveform development areas, simulation efforts, validation work, and related infrastructure.</p>
-        </div>
-        <div class="mini">
-          <h3>Clarify interfaces</h3>
-          <p>Discuss how waveform tools connect to broader analysis pipelines, common tooling, and data products.</p>
-        </div>
-        <div class="mini">
-          <h3>Plan next steps</h3>
-          <p>Use direct discussion to define concrete actions for 2026, identify bottlenecks, and strengthen collaboration across units.</p>
-        </div>
-      </div>
-    </section>
-
-    
-    <section id="programme">
-      <h2>Programme</h2>
-      <div class="agenda-wrap">
-        <table class="programme">
-          <thead>
-            <tr>
-              <th style="width:122px">CET</th>
-              <th>Monday 23 March</th>
-              <th>Tuesday 24 March</th>
-              <th>Wednesday 25 March</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="time">09:00</td>
-              <td><strong>Welcome coffee</strong></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="time">09:30–10:30</td>
-              <td>
-                <strong>CU-Wav unit updates</strong><br>
-                (10' + 5'+)<br>
-                EMRIs (Philip Lynch)<br>
-                SOBH (Sylvain Marsat)<br>
-                MBHB (Antoni Ramos Buades)<br>
-                Cosmo (Germano Nardini)<br>
-                Burst (Shubhanshu Tiwari)
-              </td>
-              <td>
-                <strong>CU-SIM</strong><br>
-                Post-mortem Mojito, JAX LISA response, Plans for 2026 (Henri Inchauspé) 20' + 10'<br>
-                Tutorial on Mojito package / build bricks? (Jean Baptiste tbc) 20' + 10'<br>
-                Simulation based inference (Carlos F. Sopuerta) 20' + 10'
-              </td>
-              <td>
-                <strong>SysTeam / PAQA</strong><br>
-                Tutorial on SonarCube 45' (Antoine Basset)<br>
-                Update from CU-L01 PA/QA 35' + 10' (Andreea-Monica Scorta)
-              </td>
-            </tr>
-            <tr>
-              <td class="time">11:00–11:30</td>
-              <td><strong>Coffee break</strong></td>
-              <td><strong>Coffee break</strong></td>
-              <td><strong>Coffee break</strong></td>
-            </tr>
-            <tr>
-              <td class="time">11:30–12:30</td>
-              <td>
-                <strong>Consortium updates</strong><br>
-                Waveform group overview (Marta Colleoni) 10' + 5'<br>
-                Common tools (Hector Estelles Estrella) 10' + 5'<br>
-                High mass ratio (Eleanor Hamilton) 10' + 5'<br>
-                Memory project (Maria Rossello) 10' + 5'<br>
-                Consortium - DDPC relation (discussion, Sascha Husa) 30'
-              </td>
-              <td>
-                <strong>CU-L2D</strong><br>
-                Overview, Mojito status and plans - TBC 20' + 10'<br>
-                Mojito lite validation<br>
-                (Jorge Valencia Gomez, Gael Servignat, Alessandro Santini, Sylvain tbc) 10' + 5' each
-              </td>
-              <td>
-                <strong>CU-Wav</strong><br>
-                Parameter space coverage for MBHBs in Mojito Heavy (Arianna Renzini) 10' + 20'<br>
-                Recap discussion F2F (30')
-              </td>
-            </tr>
-            <tr>
-              <td class="time">13:00–14:30</td>
-              <td><strong>Lunch break</strong></td>
-              <td><strong>Lunch break</strong></td>
-              <td><strong>CU-Wav call</strong></td>
-            </tr>
-            <tr>
-              <td class="time">14:00</td>
-              <td></td>
-              <td></td>
-              <td><strong>END</strong></td>
-            </tr>
-            <tr>
-              <td class="time">14:30–15:30</td>
-              <td>
-                <strong>Waveform generators</strong> (15' + 10')<br>
-                pyseobnr (Maria de Lluc Planas)<br>
-                phenomxpy (Cecilio Garcia Quiros)<br>
-                FEW (Christian Chapman-Bird)<br>
-                Burst WF generator (@yumeng xu)
-              </td>
-              <td>
-                <strong>CU-L2D</strong><br>
-                GeeMoo global-fit pipeline (Senwen Deng) 20' + 10'<br>
-                Update from Balrog (Riccardo Buscicchio) 20' + 10'<br>
-                PhenTAX (Alessandro Santini) 20' + 10'
-              </td>
-              <td>
-                We have some desk space for people who still want to stick around for the afternoon for discussions etc.<br><br>
-                People who want to visit for extra days, please contact the local organisers (see above).
-              </td>
-            </tr>
-            <tr>
-              <td class="time">16:00</td>
-              <td><strong>Coffee break</strong></td>
-              <td><strong>Coffee break</strong></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="time">16:30–17:30</td>
-              <td>
-                <strong>Waveform generators</strong> (15' + 10')<br>
-                pyEFPE (Gonzalo Morras)<br>
-                gwsignal (Cecilio Garcia Quiros)<br>
-                Assessing waveform accuracy TBC (10' + 5', Aurora Abbondanza)
-              </td>
-              <td>
-                <strong>CU-L2D</strong><br>
-                Fast Likelihood / Fast Response (Geraint Pratten) 20' + 10'<br>
-                FL Discussion 30'
-              </td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-
-    <section id="support">
-      <h2>Institutional support</h2>
-      <p class="lede">
-        The meeting receives financial support from IAC3, REDONGRA, and the
-        Universitat de les Illes Balears (UIB).
-      </p>
-      <div class="sponsors">
-        <a class="sponsor" href="https://iac3.uib.eu/" target="_blank" rel="noopener noreferrer">
-          <img src="assets/iac3_logo.png" alt="IAC3 logo" />
-          <div class="caption">Institute of Applied Computing & Community Code</div>
-        </a>
-        <a class="sponsor" href="https://redongra.github.io/website/" target="_blank" rel="noopener noreferrer">
-          <img src="assets/redongra_logo.png" alt="REDONGRA logo" />
-          <div class="caption">Spanish Network of Gravitational Wave Physics</div>
-        </a>
-        <a class="sponsor" href="https://www.uib.eu/" target="_blank" rel="noopener noreferrer">
-          <img src="assets/uib_logo.png" alt="UIB logo" />
-          <div class="caption">Universitat de les Illes Balears</div>
-        </a>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <footer>
-    CUWav F2F Mallorca Meeting · 23–25 March 2026 · Palma, Spain
-</footer>
+    <div class="wrap">
+      <div>CUWav F2F Mallorca Meeting · Public workshop page draft</div>
+    </div>
+  </footer>
 </body>
 </html>
