@@ -48,21 +48,13 @@
       display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.01em;
     }
     .brand-mark{
-      width:63px; height:63px; border-radius:10px;
+      width:38px; height:38px; border-radius:11px;
       display:grid; place-items:center;
+      background:linear-gradient(135deg, var(--blue), #27496b);
+      box-shadow:var(--shadow);
       flex:0 0 auto;
-      overflow:hidden;
-      background:#fff;
-      border:1px solid var(--line);
-      box-shadow:0 3px 8px rgba(27,40,66,.05);
     }
-    .brand-logo img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      display:block;
-      padding:4px;
-    }
+    .brand-mark svg{width:21px; height:21px}
     nav{
       display:flex; gap:18px; flex-wrap:wrap; font-size:.96rem;
     }
@@ -121,14 +113,6 @@
       border-radius:24px;
       box-shadow:var(--shadow);
       padding:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-    .hero-art svg{
-      display:block;
-      width:100%;
-      height:auto;
     }
     main{padding:34px 0 56px}
     section{
@@ -231,10 +215,13 @@
     <div class="wrap">
       <div class="topbar">
         <div class="brand">
-          <div class="brand-mark brand-logo" aria-hidden="true">
-            <img src="assets/LISA_mission_logo.png" alt="" />
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none">
+              <path d="M10 32C16 32 20 20 26 20C32 20 36 44 42 44C48 44 52 32 58 32" stroke="white" stroke-width="4.5" stroke-linecap="round"/>
+              <circle cx="34" cy="32" r="3.4" fill="#F4D35E"/>
+            </svg>
           </div>
-          <span>CUWav F2F · 23–25 March 2026 · Palma, Mallorca</span>
+          <span>CUWav F2F 2026</span>
         </div>
         <nav aria-label="Primary">
           <a href="index.html#about">About</a>
@@ -247,14 +234,19 @@
 
       <div class="hero">
         <div>
-
+          <div class="eyebrow">23–25 March 2026 · Palma, Mallorca</div>
           <h1>CUWav F2F Mallorca Meeting</h1>
           <p class="subtitle">
             A focused collaboration meeting in Palma, bringing together members of the waveforms coordination
-            unit and colleagues from related activities to advance the DDPC programme through direct scientific
-            exchange, technical discussion, and planning.
+            unit and colleagues from neighbouring activities to advance the DDPC programme in an intensive,
+            in-person setting.
           </p>
-<div class="hero-meta">
+          <div class="mission-strip">
+            <img src="assets/LISA_mission_logo.png" alt="LISA mission logo" />
+            <span class="muted-note">Waveform and data-processing activities within the LISA programme</span>
+          </div>
+
+          <div class="hero-meta">
             <div class="item">
               <span class="label">Dates</span>
               <span class="value">23–25 March 2026</span>
@@ -265,94 +257,45 @@
             </div>
             <div class="item">
               <span class="label">Venue</span>
-              <span class="value"><a href="https://iac3.uib.es/about-us/"  target="_blank" rel="noopener noreferrer">IAC3, Parc Bit, Palma, Spain</a></span>
+              <span class="value">IAC3, Parc Bit, Palma, Spain</span>
             </div>
             <div class="item">
-              <span class="label">Zoom, minutes, participant list</span>
-              <span class="value"><a href="https://s2e2.cosmos.esa.int/confluence/spaces/LISADDPC/pages/1769996678/CUWav+F2F+Mallorca+meeting" target="_blank" rel="noopener noreferrer">link to the Confluence page</a></span>
+              <span class="label">Zoom</span>
+              <span class="value">To be announced</span>
             </div>
           </div>
           <div class="btnrow">
             <a class="btn primary" href="venue.html">Venue & travel</a>
-            <a class="btn" href="https://www.google.com/maps/place/IAC3+Institute+of+Applied+Computing+%26+Community+Code/@39.6355897,2.6328775,100m/data=!3m1!1e3!4m15!1m8!3m7!1s0x1297ed44253cb95b:0x36a0cf8f83b41ab9!2sParc+Bit,+Nord,+07120,+Illes+Balears!3b1!8m2!3d39.6362831!4d2.6325747!16s%2Fm%2F0ynxhhd!3m5!1s0x1297ed006af431cd:0x4804fa9ddc0a0f0f!8m2!3d39.635529!4d2.6332846!16s%2Fg%2F11w1wk4vnp?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Open venue in Google Maps</a> 
+            <a class="btn" href="https://www.google.com/maps/place/IAC3+Institute+of+Applied+Computing+%26+Community+Code/@39.6355897,2.6328775,100m/data=!3m1!1e3!4m15!1m8!3m7!1s0x1297ed44253cb95b:0x36a0cf8f83b41ab9!2sParc+Bit,+Nord,+07120,+Illes+Balears!3b1!8m2!3d39.6362831!4d2.6325747!16s%2Fm%2F0ynxhhd!3m5!1s0x1297ed006af431cd:0x4804fa9ddc0a0f0f!8m2!3d39.635529!4d2.6332846!16s%2Fg%2F11w1wk4vnp?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Open venue in Google Maps</a>
+            <a class="btn" href="https://s2e2.cosmos.esa.int/confluence/spaces/LISADDPC/pages/1769996678/CUWav+F2F+Mallorca+meeting" target="_blank" rel="noopener noreferrer">Internal Confluence page</a>
           </div>
         </div>
 
         <div class="hero-art" aria-hidden="true">
-<svg viewBox="0 0 620 360" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
-
-  <defs>
-    <linearGradient id="bg" x1="0" x2="1">
-      <stop offset="0%" stop-color="#f8f6ef"/>
-      <stop offset="100%" stop-color="#edf2f7"/>
-    </linearGradient>
-
-    <linearGradient id="wave" x1="0" x2="1">
-      <stop offset="0%" stop-color="#355f89"/>
-      <stop offset="100%" stop-color="#c59b32"/>
-    </linearGradient>
-  </defs>
-
-  <!-- background -->
-  <rect x="0" y="0" width="620" height="360" rx="20" fill="url(#bg)"/>
-
-  <!-- sun / orbit hint -->
-  <circle cx="492" cy="80" r="42" fill="#f3ead2"/>
-
-  <!-- LISA triangle -->
-  <g transform="rotate(-12 310 190)">
-
-    <polygon
-      points="310,82 448,321 172,321"
-      fill="none"
-      stroke="#cfd8e4"
-      stroke-width="7"
-    />
-
-    <circle cx="310" cy="82" r="10" fill="#355f89"/>
-    <circle cx="448" cy="321" r="10" fill="#355f89"/>
-    <circle cx="172" cy="321" r="10" fill="#355f89"/>
-
-  </g>
-
-  <!-- waveform shadow -->
-  <path
-    d="M55 230
-       C118 230 129 145 182 145
-       C235 145 248 283 307 283
-       C366 283 381 170 448 170
-       C507 170 529 230 566 230"
-    fill="none"
-    stroke="#d7e0ea"
-    stroke-width="18"
-    stroke-linecap="round"
-  />
-
-  <!-- waveform -->
-  <path
-    d="M55 230
-       C118 230 129 145 182 145
-       C235 145 248 283 307 283
-       C366 283 381 170 448 170
-       C507 170 529 230 566 230"
-    fill="none"
-    stroke="url(#wave)"
-    stroke-width="4.5"
-    stroke-linecap="round"
-  />
-
-  <!-- title -->
-  <text
-    x="50"
-    y="64"
-    fill="#28496a"
-    font-size="24"
-    font-family="Georgia, serif"
-  >
-    LISA · Palma 2026
-  </text>
-
-</svg>
+          <svg viewBox="0 0 620 360" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="bg" x1="0" x2="1">
+                <stop offset="0%" stop-color="#f8f6ef"/>
+                <stop offset="100%" stop-color="#edf2f7"/>
+              </linearGradient>
+              <linearGradient id="wave" x1="0" x2="1">
+                <stop offset="0%" stop-color="#355f89"/>
+                <stop offset="100%" stop-color="#c59b32"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="620" height="360" rx="20" fill="url(#bg)"/>
+            <circle cx="492" cy="80" r="42" fill="#f3ead2"/>
+            <polygon points="170,110 425,142 330,294" fill="none" stroke="#cfd8e4" stroke-width="7"/>
+            <circle cx="170" cy="110" r="10" fill="#355f89"/>
+            <circle cx="425" cy="142" r="10" fill="#355f89"/>
+            <circle cx="330" cy="294" r="10" fill="#355f89"/>
+            <path d="M55 230 C118 230 129 145 182 145 C235 145 248 283 307 283 C366 283 381 170 448 170 C507 170 529 230 566 230"
+                  fill="none" stroke="#d7e0ea" stroke-width="18" stroke-linecap="round"/>
+            <path d="M55 230 C118 230 129 145 182 145 C235 145 248 283 307 283 C366 283 381 170 448 170 C507 170 529 230 566 230"
+                  fill="none" stroke="url(#wave)" stroke-width="4.5" stroke-linecap="round"/>
+            <text x="50" y="64" fill="#28496a" font-size="24" font-family="Georgia, serif">LISA · Palma 2026</text>
+            <text x="50" y="90" fill="#68778c" font-size="13" font-family="Inter, sans-serif">space-based gravitational-wave science</text>
+          </svg>
         </div>
       </div>
     </div>
@@ -360,12 +303,30 @@
 
   <main class="wrap">
     <section id="about">
+      <h2>Workshop overview</h2>
+      <p class="lede">
+        The CUWav face-to-face meeting is a working meeting focused on the
+        the waveforms coordination unit, while also bringing in colleagues from other units whose activities
+        intersect with waveform modelling, simulation, validation, pipeline development, and data-analysis
+        interfaces. The immediate aim is to make concrete scientific and technical progress, but also to
+        strengthen the shared direction of the DDPC programme through direct discussion, planning, and cross-unit exchange.
+      </p>
       <div class="split">
         <div>
-          <h3>Local organisers</h3>
-<p class="small">
-Antoni Ramos Buades, Cecilio Garcia Quiros, Jorge Valencia Gomez, Joan Llobera, Maria Rosselló, and Sascha Husa.
-</p>
+          <h3>Meeting information</h3>
+          <p>
+            <strong>IAC3 / Parc Bit</strong><br>
+            Carrer Blaise Pascal 6<br>
+            07121 Palma, Spain
+          </p>
+          <p class="small">
+            The local organisers are Antoni Ramos Buades, Cecilio Garcia Quiros, Jorge Valencia Gomez, Joan Llobera, Maria Rosselló, and Sascha Husa.
+          </p>
+        </div>
+        <div class="callout">
+          <strong>Public version.</strong> Personal registration details, attendance notes, and email addresses
+          from the internal workshop page have been deliberately omitted here. The <strong>Zoom link</strong> and the
+          <strong>participant list</strong> are available on the <a href="https://s2e2.cosmos.esa.int/confluence/spaces/LISADDPC/pages/1769996678/CUWav+F2F+Mallorca+meeting" target="_blank" rel="noopener noreferrer">internal Confluence page</a>.
         </div>
       </div>
     </section>
@@ -378,8 +339,11 @@ Antoni Ramos Buades, Cecilio Garcia Quiros, Jorge Valencia Gomez, Joan Llobera, 
         arranged as a 2.5-million-kilometre triangular interferometer, LISA will observe low-frequency gravitational waves
         from massive black-hole mergers, compact galactic binaries, and a range of other astrophysical and cosmological sources.
       </p>
-        The Distributed Data Processing Center (DDPC) is responsible for the development and operation of the European science data-processing pipelines,
-        while the LISA Consortium provides the broader international framework for preparing the scientific exploitation
+      <p class="lede">
+        Spain is one of the key countries contributing hardware to ESA for LISA. Beyond hardware, scientific participation
+        is organised across several complementary structures, including the DDPC, the LISA Consortium, and the LISA Science Team.
+        Within that landscape, the DDPC is responsible for the development and operation of the European science data-processing
+        pipelines, while the LISA Consortium provides a large international framework for preparing the scientific exploitation
         of the mission.
       </p>
       <div class="grid-3">
@@ -392,7 +356,7 @@ Antoni Ramos Buades, Cecilio Garcia Quiros, Jorge Valencia Gomez, Joan Llobera, 
           <p>LISA will probe massive black-hole mergers, galactic compact binaries, and other sources inaccessible to ground-based detectors.</p>
         </div>
         <div class="mini">
-          <h3>Topics of this Meeting</h3>
+          <h3>Why this matters here</h3>
           <p>The work discussed at this meeting feeds into waveform modelling, interfaces, validation, and pipeline development relevant to DDPC preparations.</p>
         </div>
       </div>
@@ -433,42 +397,40 @@ Antoni Ramos Buades, Cecilio Garcia Quiros, Jorge Valencia Gomez, Joan Llobera, 
         <table class="programme">
           <thead>
             <tr>
-              <th style="width:122px">CET timezone (GMT+1)</th>
+              <th style="width:122px">CET</th>
               <th>Monday 23 March</th>
               <th>Tuesday 24 March</th>
               <th>Wednesday 25 March</th>
             </tr>
           </thead>
-          <tbody>
+                    <tbody>
             <tr>
               <td class="time">09:00</td>
               <td><strong>Welcome coffee</strong></td>
               <td></td>
-              <td>Starting at 9:00</td>
+              <td></td>
             </tr>
             <tr>
-              <td class="time">09:30–11:00</td>
+              <td class="time">09:30–10:30</td>
               <td>
                 <strong>CU-Wav unit updates</strong><br>
-                (10' + 5')<br>
-                Welcome + meeting goals (Sascha Husa, Antoni Ramos Buades, Cecilio Garcia Quiros)<br>
-                Burst (Shubhanshu Tiwari)<br>
-                Cosmo (Germano Nardini)<br>
+                (10' + 5'+)<br>
                 EMRIs (Philip Lynch)<br>
                 SOBH (Sylvain Marsat)<br>
-                MBHB (Antoni Ramos Buades)
+                MBHB (Antoni Ramos Buades)<br>
+                Cosmo (Germano Nardini)<br>
+                Burst (Shubhanshu Tiwari)
               </td>
               <td>
                 <strong>CU-SIM</strong><br>
                 Post-mortem Mojito, JAX LISA response, Plans for 2026 (Henri Inchauspé) 20' + 10'<br>
-                Tutorial on Mojito package (Jean-Baptiste Bayle) 20' + 10'<br>
+                Tutorial on Mojito package / build bricks? (Jean Baptiste tbc) 20' + 10'<br>
                 Simulation based inference (Carlos F. Sopuerta) 20' + 10'
               </td>
               <td>
-                <strong>SysTeam / PAQA</strong> (starting at 9:00)<br>
-                Introduction (Brigitte Huynh + TBC) 15'<br>
-                Tutorial on SonarQube 45' (Antoine Basset + Louis Martin)<br>
-                Requirements procedure 50' + 10' (Andreea-Monica Scorta)
+                <strong>SysTeam / PAQA</strong><br>
+                Tutorial on SonarCube 45' (Antoine Basset)<br>
+                Update from CU-L01 PA/QA 35' + 10' (Andreea-Monica Scorta)
               </td>
             </tr>
             <tr>
@@ -478,25 +440,24 @@ Antoni Ramos Buades, Cecilio Garcia Quiros, Jorge Valencia Gomez, Joan Llobera, 
               <td><strong>Coffee break</strong></td>
             </tr>
             <tr>
-              <td class="time">11:30–13:00</td>
+              <td class="time">11:30–12:30</td>
               <td>
                 <strong>Consortium updates</strong><br>
                 Waveform group overview (Marta Colleoni) 10' + 5'<br>
                 Common tools (Hector Estelles Estrella) 10' + 5'<br>
                 High mass ratio (Eleanor Hamilton) 10' + 5'<br>
-                Memory project (Maria Rossello) - 10' + 5'<br>
+                Memory project (Maria Rossello) 10' + 5'<br>
                 Consortium - DDPC relation (discussion, Sascha Husa) 30'
               </td>
               <td>
                 <strong>CU-L2D</strong><br>
-                Overview, Mojito status and plans - TBC (Riccardo Buscicchio) 20' + 10'<br>
-                Mojito lite validation (Jorge Valencia Gomez, Gael Servignat, Alessandro Santini, Sylvain Marsat) 10' + 5' each<br>
-                Discussion overflow time: 15'
+                Overview, Mojito status and plans - TBC 20' + 10'<br>
+                Mojito lite validation<br>
+                (Jorge Valencia Gomez, Gael Servignat, Alessandro Santini, Sylvain tbc) 10' + 5' each
               </td>
               <td>
                 <strong>CU-Wav</strong><br>
                 Parameter space coverage for MBHBs in Mojito Heavy (Arianna Renzini) 10' + 20'<br>
-                Review pipeline (Raffi Enficiaud) 10' + 5'<br>
                 Recap discussion F2F (30')
               </td>
             </tr>
@@ -504,10 +465,16 @@ Antoni Ramos Buades, Cecilio Garcia Quiros, Jorge Valencia Gomez, Joan Llobera, 
               <td class="time">13:00–14:30</td>
               <td><strong>Lunch break</strong></td>
               <td><strong>Lunch break</strong></td>
-              <td><strong>CU-Wav call</strong><br>(13:00-14:00)</td>
+              <td><strong>CU-Wav call</strong></td>
             </tr>
             <tr>
-              <td class="time">14:30–16:00</td>
+              <td class="time">14:00</td>
+              <td><strong>END</strong></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="time">14:30–15:30</td>
               <td>
                 <strong>Waveform generators</strong> (15' + 10')<br>
                 pyseobnr (Maria de Lluc Planas)<br>
@@ -522,13 +489,12 @@ Antoni Ramos Buades, Cecilio Garcia Quiros, Jorge Valencia Gomez, Joan Llobera, 
                 PhenTAX (Alessandro Santini) 20' + 10'
               </td>
               <td>
-                <strong>END</strong><br>
                 We have some desk space for people who still want to stick around for the afternoon for discussions etc.<br><br>
                 People who want to visit for extra days, please contact the local organisers (see above).
               </td>
             </tr>
             <tr>
-              <td class="time">16:00-16:30</td>
+              <td class="time">16:00</td>
               <td><strong>Coffee break</strong></td>
               <td><strong>Coffee break</strong></td>
               <td></td>
@@ -551,33 +517,39 @@ Antoni Ramos Buades, Cecilio Garcia Quiros, Jorge Valencia Gomez, Joan Llobera, 
           </tbody>
         </table>
       </div>
+      <p class="small" style="margin-top:14px;">
+        The Zoom link for all sessions and the participant list are maintained only on the
+        <a href="https://s2e2.cosmos.esa.int/confluence/spaces/LISADDPC/pages/1769996678/CUWav+F2F+Mallorca+meeting" target="_blank" rel="noopener noreferrer">internal Confluence page</a>.
+      </p>
     </section>
 
 
     <section id="support">
       <h2>Institutional support</h2>
       <p class="lede">
-The meeting receives financial support from the Universitat de les Illes Balears (UIB) with funds from the Programa de Foment de la Recerca i la Innovació de la UIB 2024-2026 (supported by the yearly plan of the Tourist Stay Tax ITS2023-086), the Institut d'Aplicacions Computacionals de Codi Comunitari (IAC3),  REDONGRA (grant RED2024-153735-E from Agencia Estatal de Investigación, Ministerio de Ciencia, Innovación y Universidades MCIN/AEI/10.13039/501100011033),  and the Comunitat Autònoma de les Illes Balears through the Conselleria d'Educació i Universitats with funds from the ERDF (SINCO2022/18146 - Plataforma HiTech-IAC3-BIO). 
+        The meeting receives financial support from IAC3, REDONGRA, and the
+        Universitat de les Illes Balears (UIB).
       </p>
       <div class="sponsors">
-        <a class="sponsor" href="https://iac3.uib.eu/" target="_blank" rel="noopener noreferrer">
+        <div class="sponsor">
           <img src="assets/iac3_logo.png" alt="IAC3 logo" />
           <div class="caption">Institute of Applied Computing & Community Code</div>
-        </a>
-        <a class="sponsor" href="https://redongra.github.io/website/" target="_blank" rel="noopener noreferrer">
+        </div>
+        <div class="sponsor">
           <img src="assets/redongra_logo.png" alt="REDONGRA logo" />
           <div class="caption">Spanish Network of Gravitational Wave Physics</div>
-        </a>
-        <a class="sponsor" href="https://www.uib.eu/" target="_blank" rel="noopener noreferrer">
+        </div>
+        <div class="sponsor">
           <img src="assets/uib_logo.png" alt="UIB logo" />
           <div class="caption">Universitat de les Illes Balears</div>
-        </a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
     CUWav F2F Mallorca Meeting · 23–25 March 2026 · Palma, Spain
+    <div style="max-width:1120px;margin:0 auto 18px;padding:0 24px;color:#617087;font-size:.88rem;">Replace <code>https://s2e2.cosmos.esa.int/confluence/spaces/LISADDPC/pages/1769996678/CUWav+F2F+Mallorca+meeting</code> with the real internal Confluence page URL.</div>
 </footer>
 </body>
 </html>
